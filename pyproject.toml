@@ -1,0 +1,24 @@
+[project]
+name = "machine-learning"
+version = "0.1.0"
+description = "This is just a sandbox to maintain my knowledge about several machine-learning packages."
+readme = "README.md"
+authors = [
+    { name = "Jos van Nijnatten", email = "GitHub@vanNijnatten.dev" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+machine-learning = "machine_learning:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.1",
+    "ruff>=0.12.1",
+]
