@@ -1,12 +1,17 @@
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
+  rev: v5.0.0
   hooks:
+    - id: check-merge-conflict
+    - id: check-toml
     - id: check-yaml
-    - id: end-of-file-fixer
+    - id: check-docstring-first
     - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-executables-have-shebangs
+    - id: check-shebang-scripts-are-executable
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.12.1
+  rev: v0.12.5
   hooks:
     - id: ruff-check
       types_or: [ python, pyi ]
@@ -14,14 +19,7 @@ repos:
     - id: ruff-format
       types_or: [ python, pyi ]
       args: [ --line-length=120 ]
-- repo: local
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: 'v1.17.0'
   hooks:
-    - id: mypy
-      name: mypy
-      entry: mypy
-      language: python
-      'types_or': [python, pyi]
-      args: ["--ignore-missing-imports", "--scripts-are-modules"]
-      require_serial: true
-      additional_dependencies: []
-      minimum_pre_commit_version: '2.9.2'
+  -   id: mypy
