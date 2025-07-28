@@ -6,8 +6,17 @@ readme = "README.md"
 authors = [
     { name = "Jos van Nijnatten", email = "GitHub@vanNijnatten.dev" }
 ]
-requires-python = ">=3.13"
-dependencies = []
+requires-python = ">=3.12"
+dependencies = [
+    "keras>=3.10.0",
+    "marimo[recommended]>=0.14.13",
+    "matplotlib>=3.10.3",
+    "numpy>=2.3.2",
+    "pyspark>=4.0.0",
+    "python-lsp-server>=1.13.0",
+    "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
+]
 
 [project.scripts]
 machine-learning = "machine_learning:main"
